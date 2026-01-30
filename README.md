@@ -16,3 +16,8 @@
 
 [Mini PC Case Vendor Documentation](https://www.elecrow.com/wiki/mini-pc-case.html)
 
+
+
+## Todo
+
+- [ ] buy [splitted usb-c cable](https://shop.post.ch/en/electronics/smartphones-tablets/charging-cables/usb-c-splitter-cable-60w-sbs/p/838234)
