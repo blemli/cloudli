@@ -69,10 +69,7 @@ python3 -m ensurepip
 #source .venv/bin/activate
 
 echo "~~~ install nextcloud cli ~~~"
-sudo add-apt-repository ppa:nextcloud-devs/client
-sudo apt update
-sudo apt install nextcloud-client
-
+sudo apt install nextcloud-desktop-cmd
 
 echo "~~~ install  ~~~"
 setup/install-$NAME.sh
