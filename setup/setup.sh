@@ -72,6 +72,7 @@ echo "~~~ install nextcloud cli ~~~"
 sudo apt install nextcloud-desktop-cmd
 
 echo "~~~ install elecrow mini pc case oled & shutdown button ~~~"
+sudo raspi-config nonint do_i2c 0
 git clone https://github.com/Elecrow-RD/Small-Mini-PC-Case.git ~/Small-Mini-PC-Case
 sudo cp ~/Small-Mini-PC-Case/Raspberry\ Pi\ 5/rpi5-oled.py /usr/local/bin/rpi5-oled.py
 sudo cp ~/Small-Mini-PC-Case/Raspberry\ Pi\ 5/rpi5-oled.service /etc/systemd/system/rpi5-oled.service
