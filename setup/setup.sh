@@ -71,5 +71,23 @@ python3 -m ensurepip
 echo "~~~ install nextcloud cli ~~~"
 sudo apt install nextcloud-desktop-cmd
 
+echo "~~~ install elecrow mini pc case oled & shutdown button ~~~"
+git clone https://github.com/Elecrow-RD/Small-Mini-PC-Case.git ~/Small-Mini-PC-Case
+sudo cp ~/Small-Mini-PC-Case/Raspberry\ Pi\ 5/rpi5-oled.py /usr/local/bin/rpi5-oled.py
+sudo cp ~/Small-Mini-PC-Case/Raspberry\ Pi\ 5/rpi5-oled.service /etc/systemd/system/rpi5-oled.service
+sudo cp ~/Small-Mini-PC-Case/Raspberry\ Pi\ 5/shutdown.py /usr/local/bin/shutdown.py
+sudo cp ~/Small-Mini-PC-Case/Raspberry\ Pi\ 5/rcshutdown.service /etc/systemd/system/rcshutdown.service
+sudo cp ~/Small-Mini-PC-Case/Raspberry\ Pi\ 5/rc.shutdown /etc/rc.shutdown
+sudo chmod +x /usr/local/bin/rpi5-oled.py
+sudo apt-get install -y python3-psutil python3-smbus
+sudo systemctl enable rpi5-oled.service
+sudo systemctl start rpi5-oled.service
+sudo chmod 777 /usr/local/bin/shutdown.py
+sudo chmod 777 /etc/systemd/system/rcshutdown.service
+sudo chmod 777 /etc/rc.shutdown
+sudo systemctl enable rcshutdown.service
+sudo systemctl start rcshutdown.service
+rm -rf ~/Small-Mini-PC-Case
+
 echo "~~~ install  ~~~"
 setup/install-$NAME.sh
